@@ -12,7 +12,8 @@
   },
   "action": {},
   "host_permissions": [
-    "YOUR_CONFLUENCE_URL_HERE"
+    "http://*/*",
+    "https://*/*"
   ],
   "icons": {
     "16": "favicon/favicon16.png",

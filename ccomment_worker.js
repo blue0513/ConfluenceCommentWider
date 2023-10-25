@@ -1,44 +1,17 @@
-let widen = true;
+const CONFLUENCE_URL_PART = ".atlassian.";
 
-chrome.webNavigation.onDOMContentLoaded.addListener(async ({ tabId }) => {
-  const enabled = getEnabled();
+chrome.webNavigation.onDOMContentLoaded.addListener(async ({ tabId, url }) => {
+  if (!url.includes(CONFLUENCE_URL_PART)) {
+    return;
+  }
+
   const injectionCSS = {
     target: { tabId: tabId },
     files: ["style.css"],
   };
-
-  toggleCSS(enabled, injectionCSS);
-  toggleIcon(enabled);
+  insertCSS(injectionCSS);
 });
 
-chrome.action.onClicked.addListener(() => {
-  setEnabled(!getEnabled());
-  reload();
-});
-
-function reload() {
-  chrome.tabs.reload();
-}
-
-function getEnabled() {
-  return widen;
-}
-
-function setEnabled(value) {
-  widen = value;
-}
-
-function toggleCSS(enabled, css) {
-  if (enabled) {
-    chrome.scripting.insertCSS(css);
-  } else {
-    chrome.scripting.removeCSS(css);
-  }
-}
-
-function toggleIcon(enabled) {
-  const icon = enabled
-    ? "favicon/favicon16.png"
-    : "favicon/favicon_disabled.png";
-  chrome.action.setIcon({ path: icon });
+function insertCSS(css) {
+  chrome.scripting.insertCSS(css);
 }

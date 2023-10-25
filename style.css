@@ -1,3 +1,7 @@
 #inline-comment-sidebar {
   width: 800px !important;
 }
+
+[data-cy="editor-comments-sidebar"] {
+    width: 800px !important;
+}

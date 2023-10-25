@@ -1,0 +1,16 @@
+{
+    "name": "ConfluenceCommentWider",
+    "version": "1.0.0",
+    "scripts": {
+        "eslint": "npx eslint *.js",
+        "eslint-fix": "npx eslint --fix *.js",
+        "prettier": "npx prettier --check *.js *.css",
+        "prettier-fix": "npx prettier --write *.js *.css",
+        "fix-all": "npm run eslint-fix && npm run prettier-fix",
+        "check-all": "npm run eslint && npm run prettier"
+    },
+    "devDependencies": {
+        "eslint": "^8.52.0",
+        "prettier": "3.0.3"
+    }
+}

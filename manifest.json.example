@@ -1,0 +1,23 @@
+{
+  "name": "ConfluenceCommentWider",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "scripting",
+    "tabs",
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "ccomment_worker.js"
+  },
+  "action": {},
+  "host_permissions": [
+    "YOUR_CONFLUENCE_URL_HERE"
+  ],
+  "icons": {
+    "16": "favicon/favicon16.png",
+    "32": "favicon/favicon32.png",
+    "48": "favicon/favicon48.png",
+    "128": "favicon/favicon128.png"
+  }
+}

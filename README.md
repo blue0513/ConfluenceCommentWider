@@ -1,4 +1,4 @@
-# ConfluenceCommentWider
+# Confluence Comment Wider
 
 [![CI](https://github.com/blue0513/ConfluenceCommentWider/actions/workflows/ci.yml/badge.svg)](https://github.com/blue0513/ConfluenceCommentWider/actions/workflows/ci.yml)
 
